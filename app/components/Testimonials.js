@@ -8,7 +8,7 @@ function Testimonials() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {testiminials.map((t, i) => (
-          <div key={i} className="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+          <div key={i} className="bg-white p-6 rounded-xl shadow-xl border-blue-500 hover:shadow-md cursor-pointer transition">
             <div className="flex items-center gap-4 mb-4">
               <img src={t.image} alt={t.name} className="w-14 h-14 rounded-full object-cover" />
               <div>
