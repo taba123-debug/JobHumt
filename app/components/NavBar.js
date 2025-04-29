@@ -24,16 +24,16 @@ export default function NavBar() {
           <Link href="/support" className="text-black hover:text-blue-500 transition">
             Support
           </Link>
-          <Link href="/contact" className="text-black hover:text-blue-500 transition">
+          <Link href="/blog" className="text-black hover:text-blue-500 transition">
           Blog 
           </Link>
           <Link href="/contact" className="text-black hover:text-blue-500 transition">
             Contact
           </Link>
-          <Link href="/contact" className="text-black hover:text-blue-500 transition">
+          <Link href="/login" className="text-black hover:text-blue-500 transition">
             Login
           </Link>
-          <Link href="/contact" className="text-black hover:text-blue-500 transition">
+          <Link href="/signup" className="text-black hover:text-blue-500 transition">
             <button className="bg-gray-300 text-black px-4 py-2 rounded-3xl hover:bg-blue-700 hover:text-white transition">
                 Sign Up
             </button>

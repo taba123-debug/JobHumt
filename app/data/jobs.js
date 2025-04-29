@@ -1,6 +1,6 @@
 const job=[
     {
-        id: 1,
+        ID_Data: 1,
         title: "Business Development Manager",
         company: "Tech Innovators Inc.",
         location: "Remote",
@@ -15,7 +15,7 @@ const job=[
         datePosted: "2025-04-18"
     },
     {
-        id: 2,
+        ID_Data: 2,
         title: "Sales Executive",
         company: "Global Solutions Ltd.",
         location: "Remote",
@@ -31,7 +31,7 @@ const job=[
     }
     ,
     {
-        id: 3,
+        ID_Data: 3,
         title: "Marketing Specialist",
         company: "Creative Agency",
         location: "Remote",
@@ -45,7 +45,7 @@ const job=[
           datePosted: "2025-04-19"
     },
     {
-        id: 4,
+        ID_Data: 4,
         title: "Product Manager",
         company: "Tech Solutions",
         location: "Remote",
@@ -59,7 +59,7 @@ const job=[
           datePosted: "2025-04-19"
     },
     {
-        id: 5,
+        ID_Data: 5,
         title: "Customer Success Manager",
         company: "SaaS Company",
         location: "Remote",
@@ -73,7 +73,7 @@ const job=[
           datePosted: "2025-04-19"
     },
     {
-        id: 6,
+        ID_Data: 6,
         title: "Data Analyst",
         company: "Analytics Corp.",
         location: "Remote",

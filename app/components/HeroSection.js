@@ -14,6 +14,9 @@ function HeroSection() {
           ''Discover top-tier remote roles, hand-picked for business  professionals , support leads. 
           Job Hunt made easy — powered by smart admin posting & curated opportunities.''
         </p>
+        {/* <button className="bg-gray-300  mr-10 text-black px-6 py-3  font-semibold  hover:text-[#6C5CE7] transition">
+          Get Started
+        </button> */}
         <button className="bg-gray-300 text-black px-6 py-3 rounded-2xl font-semibold hover:bg-[#6C5CE7] hover:text-white transition">
           Explore Jobs
         </button>
