@@ -35,7 +35,7 @@ async function page() {
                 </span>
               </div>
               <p className="text-gray-500 mb-2">
-                <strong>Company: </strong> {singlejob.Company}
+                <strong>Company: </strong> {singlejob.company}
               </p>
               <p className="text-gray-500 mb-2">
                 <strong>Location:</strong> {singlejob.location}
