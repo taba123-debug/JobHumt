@@ -40,7 +40,11 @@ async function page() {
               <p className="text-gray-500 mb-2">
                 <strong>Location:</strong> {singlejob.location}
               </p>
-              <p className="text-gray-500 mb-4">{singlejob.description}</p>
+              {/* <p className="text-gray-500 mb-2">
+                <strong>Salary:</strong> {singlejob.Salary}
+              </p> */}
+              <p className="text-gray-500 mb-4">
+                <strong>Job Description: </strong>{singlejob.description}</p>
               <Link
                 href={`/details/${singlejob.ID_data}`}
                 className="inline-block border-2xl p-2 bg-[#6C5CE7] text-white rounded-full hover:cursor-pointer hover:text-black"

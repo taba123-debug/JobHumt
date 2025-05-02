@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function NavBar() {
   return (
-    <nav className=" bg-white fixed top-0 left-0 w-full z-50  shadow-md">
+    <nav className=" bg-white fixed top-0 left-0 w-full z-50  shadow-md">;
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-black">
           <span className="text-[#6C5CE7]">.Jobs^</span>Hunt.
