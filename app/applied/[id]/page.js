@@ -1,13 +1,13 @@
-'use client';
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 
 const ApplyPage = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
+    name: "",
+    email: "",
+    phone: "",
     resume: null,
-    coverLetter: '',
+    coverLetter: "",
   });
 
   const handleChange = (e) => {
@@ -21,13 +21,15 @@ const ApplyPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    message('Application submitted successfully!');
+    message("Application submitted successfully!");
   };
 
   return (
     <div className="min-h-full  bg-gray-100 flex items-center justify-center py-10 px-4">
       <div className="w-full max-w-2xl mt-30 bg-white rounded-lg shadow-xl p-8">
-        <h2 className="text-4xl font-extrabold mb-8 text-center text-gray-900">Job Application Form</h2>
+        <h2 className="text-4xl font-extrabold mb-8 text-center text-gray-900">
+          Job Application Form
+        </h2>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-4">
@@ -58,7 +60,10 @@ const ApplyPage = () => {
           </div>
 
           <div className="space-y-4">
-            <label htmlFor="resume" className="block text-lg font-medium text-gray-700">
+            <label
+              htmlFor="resume"
+              className="block text-lg font-medium text-gray-700"
+            >
               Resume (PDF/Word)
             </label>
             <div className="relative">
@@ -73,11 +78,24 @@ const ApplyPage = () => {
               />
               <div
                 className={`w-full p-4 border border-gray-300 rounded-lg shadow-sm bg-gray-50 text-gray-700 flex justify-between items-center ${
-                  formData.resume ? 'bg-blue-100' : ''
+                  formData.resume ? "bg-blue-100" : ""
                 }`}
               >
-                <span>{formData.resume ? formData.resume.name : 'No file chosen'}</span>
-                <span className="text-sm text-gray-500">{formData.resume ? 'File selected' : 'Click to choose'}</span>
+                <span>
+                  {formData.resume ? formData.resume.name : "No file chosen"}
+                </span>
+                <span>
+                  <button
+                  className={`text-sm font-medium px-4 py-2 rounded-lg transition 
+      ${
+        formData.resume
+          ? "bg-blue-600 text-white hover:bg-blue-800"
+          : "bg-blue-100 text-blue-700 hover:bg-blue-200"
+      }`}
+                  >
+                    {formData.resume ? "✔ File selected" : "📁 Click to choose"}
+                  </button>
+                </span>
               </div>
             </div>
           </div>

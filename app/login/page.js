@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-function Page() {
+function page() {
 return ( <div className="flex min-h-screen font-sans mt-20 ">
 
   <div className="w-1/2 flex flex-col justify-center ml-20 items-center p-12 shadow-2xl border-blue-800 mt-10 rounded-lg">
@@ -39,5 +39,6 @@ return ( <div className="flex min-h-screen font-sans mt-20 ">
 </div>
 );
 }
+export default page
 
 

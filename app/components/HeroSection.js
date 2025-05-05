@@ -1,6 +1,17 @@
 import React from 'react'
 
-function HeroSection() {
+ async function  getAboutData(){
+  const result = await fetch("http://localhost:1337/api/abouts");
+  if (!result.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return result.json();
+}
+
+
+async function HeroSection() {
+  const aboutData = await getAboutData();
+
   return (
     <div>
       <section className="bg-white text-center py-24 px-4">
@@ -10,13 +21,12 @@ function HeroSection() {
         <h1 
         className="text-[#6C5CE7] mt-5 text-5xl font-extrabold">BUSINESS DEVELOPMENT .
         </h1>
-        <p className="text-lg text-gray-700 mb-8 mt-10">
+        {/* <p className="text-lg text-gray-700 mb-8 mt-10">
           ''Discover top-tier remote roles, hand-picked for business  professionals , support leads. 
           Job Hunt made easy — powered by smart admin posting & curated opportunities.''
-        </p>
-        {/* <button className="bg-gray-300  mr-10 text-black px-6 py-3  font-semibold  hover:text-[#6C5CE7] transition">
-          Get Started
-        </button> */}
+        </p> */}
+        
+        <p className='text-lg text-gray-700 mb-8 mt-10'>{aboutData}</p>
         <button className="bg-gray-300 text-black px-6 py-3 rounded-2xl font-semibold hover:bg-[#6C5CE7] hover:text-white transition">
           Explore Jobs
         </button>
