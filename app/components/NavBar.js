@@ -29,12 +29,12 @@ export default function NavBar() {
           >
             Support
           </Link>
-          <Link
+          {/* <Link
             href="/blog"
             className="text-black hover:text-blue-500 transition"
           >
             Blog
-          </Link>
+          </Link> */}
           <Link
             href="/contact"
             className="text-black hover:text-blue-500 transition"
