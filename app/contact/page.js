@@ -6,10 +6,13 @@ export default function ContactPage() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState(""); 
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
+    setStatus("");
+    setLoading(true);
+
     const formData = {
       data: {
         name,
@@ -17,31 +20,32 @@ export default function ContactPage() {
         message,
       },
     };
-  
+
     try {
-      const res = await fetch("http://localhost:1337/api/feedback-infos", {
+      const res = await fetch("http://localhost:1337/api/feedbacks-infos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-  
+
       const result = await res.json();
-      console.log("Strapi backend response:", result);
-  
+      console.log("Strapi response:", result);
+
       if (res.ok) {
-        setStatus("Thank you! Your feedback has been submitted.");
+        setStatus("✅ Thank you! Your feedback has been submitted.");
         setName("");
         setEmail("");
         setMessage("");
       } else {
-        setStatus("Oops! Something went wrong.");
-        // console.error("Strapi error:", result);
+        setStatus(` Submission failed: ${result.error?.message || "Unknown error"}`);
       }
     } catch (error) {
-      setStatus("Server error. Please try again later.");
       console.error("Error submitting feedback:", error);
+      setStatus("❌ Server error. Please try again later.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -50,7 +54,7 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div>
           <img
-            src="images/illustion_1.png"
+            src="/images/illustion_1.png"
             alt="Contact illustration"
             className="w-full max-w-md mx-auto md:mx-0"
           />
@@ -102,13 +106,22 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-200 text-white font-bold py-3 rounded-lg transition duration-300"
+              disabled={loading}
+              className={`w-full ${
+                loading ? "bg-blue-300" : "bg-blue-500 hover:bg-blue-600"
+              } text-white font-bold py-3 rounded-lg transition duration-300`}
             >
-              Submit Feedback
+              {loading ? "Submitting..." : "Submit Feedback"}
             </button>
 
             {status && (
-              <p className="mt-4 text-center text-sm text-green-600">{status}</p>
+              <p
+                className={`mt-4 text-center text-sm ${
+                  status.startsWith("✅") ? "text-green-600" : "text-red-500"
+                }`}
+              >
+                {status}
+              </p>
             )}
           </form>
         </div>
