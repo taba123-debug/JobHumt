@@ -21,10 +21,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-        <Toaster position="top-center" reverseOrder={false} />
+       
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+         <Toaster position="top-center" reverseOrder={false} />
         <NavBar />
         {children}
         <Footer/>
