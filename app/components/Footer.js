@@ -17,12 +17,12 @@ function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-black  font-semibold mb-3">Quick Links</h4>
+          <h4 className="text-black  font-semibold mb-3">Direct Links</h4>
           <ul className="space-y-2 text-sm">
             <li><Link href="/" className="hover:text-[#6C5CE7]">Home</Link></li>
-            <li><Link href="/about" className="hover:text-[#6C5CE7]">About</Link></li>
-            <li><Link href="/jobs" className="hover:text-[#6C5CE7]">Jobs</Link></li>
             <li><Link href="/contact" className="hover:text-[#6C5CE7]">Contact</Link></li>
+            <li><Link href="/jobs" className="hover:text-[#6C5CE7]">Jobs</Link></li>
+            <li><Link href="/support" className="hover:text-[#6C5CE7]">Support</Link></li>
           </ul>
         </div>
 
