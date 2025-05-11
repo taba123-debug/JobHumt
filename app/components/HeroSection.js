@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link';
 async function getAboutData() {
   const result = await fetch("http://localhost:1337/api/abouts");
 
@@ -28,10 +28,14 @@ async function HeroSection() {
           </h1>
 
           <p className='text-lg text-gray-700 mb-8 mt-10'>{description}</p>
-
-          <button className="bg-gray-300 text-black px-6 py-3 rounded-2xl font-semibold hover:bg-[#6C5CE7] hover:text-white transition">
+          <Link href="/login">
+            <button className="bg-gray-300 text-black px-6 py-3 rounded-2xl font-semibold hover:bg-[#6C5CE7] hover:text-white transition">
             Explore  Jobs
           </button>
+          </Link>   
+          {/* <button className="bg-gray-300 text-black px-6 py-3 rounded-2xl font-semibold hover:bg-[#6C5CE7] hover:text-white transition">
+            Explore  Jobs
+          </button> */}
         </div>
       </section>
     </div>
