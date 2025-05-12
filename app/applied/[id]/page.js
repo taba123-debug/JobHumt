@@ -25,7 +25,7 @@ const ApplyPage = () => {
   };
 
   return (
-    <div className="min-h-full  bg-gray-100 flex items-center justify-center py-10 px-4">
+    <div className="min-h-full flex items-center justify-center py-10 px-4">
       <div className="w-full max-w-2xl mt-30 bg-white rounded-lg shadow-xl p-8">
         <h2 className="text-4xl font-extrabold mb-8 text-center text-gray-900">
           Job Application Form
