@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-// This is a Server Component (async)
+
 async function page({ params }) {
   const { id } = params;
 
@@ -18,14 +18,12 @@ async function page({ params }) {
       </div>
     );
   }
-  console.log(selectedJob);
-  const req = selectedJob.requirements;
-  console.log(req);
 
   return (
-    <div className="min-h-screen py-15 px-20 md:px-12 flex justify-center ">
-      <div className="ml-2 mx-auto w-[750px]  p-10 mt-25 border-blue-800 border-2 rounded-2xl shadow-sm  hover:cursor-pointer">
-        <h1 className="text-4xl font-bold text-[#6C5CE7] mb-4">
+    <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-20 flex flex-col lg:flex-row gap-8">
+    
+      <div className="w-full lg:w-2/3 mt-11 bg-white border-blue-800 border-2 rounded-2xl shadow-md p-6 sm:p-10">
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#6C5CE7] mb-4">
           {selectedJob.JobTitle}
         </h1>
         <p className="text-lg text-gray-700 mb-2">
@@ -56,34 +54,32 @@ async function page({ params }) {
             <h2 className="text-2xl font-semibold text-[#6C5CE7] mb-2">
               Requirements
             </h2>
-
-            {(() => {
-              const req = selectedJob.requirements[0].children; // extract list items
-              return (
-                <ul className="list-disc list-inside text-gray-600 space-y-1">
-                  {req.map((item, index) => (
-                    <li key={index}>{item.children[0]?.text}</li>
-                  ))}
-                </ul>
-              );
-            })()}
+            <ul className="list-disc list-inside text-gray-600 space-y-1">
+              {selectedJob.requirements[0].children.map((item, index) => (
+                <li key={index}>{item.children[0]?.text}</li>
+              ))}
+            </ul>
           </div>
         )}
+
         <Link
           href={`/applied/${selectedJob.ID_data}`}
-          className="inline-block border-2xl p-2 bg-[#6C5CE7] text-white rounded-full hover:cursor-pointer hover:text-black"
+          className="inline-block mt-6 px-6 py-3 bg-[#6C5CE7] text-white font-medium rounded-full hover:bg-[#5946d2] transition duration-200"
         >
           Apply Now
         </Link>
       </div>
-      <div className="mt-30 md:w-1/2 flex justify-center">
+       <div className="w-full lg:w-2/3 mt-14 flex flex-col items-center lg:items-start">
         <Image
           src="/images/illustion_1.png"
-          alt="About Illustration"
+          alt="Job Illustration"
           width={700}
           height={200}
-          className="rounded-2xl "
+          className="w-full max-w-md h-auto rounded-2xl object-contain"
         />
+        <p className="text-gray-500 text-2xl mt-4 px-2 text-center lg:text-left">
+          <strong>Note:</strong> Ensure to check the job requirements before applying.
+        </p>
       </div>
     </div>
   );
